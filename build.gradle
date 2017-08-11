@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+group = 'bcp.spring'
+version = '1.0-SNAPSHOT'
+
+description = "Spring boot argument resolving sandbox"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+		compile group: 'org.codehaus.groovy',
+		name: 'groovy-all',
+		version:'2.4.6'
+		
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+		
+	compile group: 'org.projectlombok',
+		name: 'lombok',
+		version:'1.16.4'
+	
+	testCompile 'junit:junit:4.12'
+}
